@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">pantry_pal</string>
+    <string name="title_home">Home</string>
+    <string name="title_grocery_list">Grocery List</string>
+    <string name="title_recipes">Recipes</string>
+    <string name="title_meal_plan">Meal Plans</string>
+</resources>
