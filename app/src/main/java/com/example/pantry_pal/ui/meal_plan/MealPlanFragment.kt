@@ -22,14 +22,14 @@ class MealPlanFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val recipesViewModel =
-            ViewModelProvider(this).get(MealPlanViewMovel::class.java)
+        val mealPlanViewModel =
+            ViewModelProvider(this).get(MealPlanViewModel::class.java)
 
         _binding = FragmentMealPlanBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        recipesViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.mealPlan
+        mealPlanViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

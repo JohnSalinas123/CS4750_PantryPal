@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_meal_plan"
-        android:name="com.example.pantry_pal.ui.recipes.RecipesFragment"
+        android:name="com.example.pantry_pal.ui.meal_plan.MealPlanFragment"
         android:label="@string/title_meal_plan"
         tools:layout="@layout/fragment_meal_plan" />
 
