@@ -32,19 +32,9 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imageButton1"
-                android:layout_weight="0"
-                android:layout_width="200dp"
-                android:layout_height="180dp"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:scaleType="fitXY"
-                android:src="@drawable/holidaysugar"
-                android:layout_margin="5dp" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/news_apple"
                 android:layout_width="200dp"
                 android:layout_height="180dp"
                 android:adjustViewBounds="true"
@@ -56,18 +46,7 @@
 
 
             <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="200dp"
-                android:layout_height="180dp"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:scaleType="fitXY"
-                android:layout_weight="1"
-                android:src="@drawable/coconutoil"
-                android:layout_margin="5dp" />
-
-            <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/news_egg"
                 android:layout_width="200dp"
                 android:layout_height="180dp"
                 android:adjustViewBounds="true"
@@ -78,7 +57,18 @@
                 android:layout_margin="5dp"/>
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/news_oil"
+                android:layout_width="200dp"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:layout_weight="1"
+                android:src="@drawable/coconutoil"
+                android:layout_margin="5dp" />
+
+            <ImageButton
+                android:id="@+id/news_skittles"
                 android:layout_width="200dp"
                 android:layout_height="180dp"
                 android:adjustViewBounds="true"
@@ -86,6 +76,17 @@
                 android:scaleType="fitXY"
                 android:layout_weight="1"
                 android:src="@drawable/skittles"
+                android:layout_margin="5dp" />
+
+            <ImageButton
+                android:id="@+id/news_sugar"
+                android:layout_weight="0"
+                android:layout_width="200dp"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/holidaysugar"
                 android:layout_margin="5dp" />
 
 
