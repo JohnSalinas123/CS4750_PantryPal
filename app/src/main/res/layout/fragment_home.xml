@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/welcomeMsg"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="viewStart"
@@ -44,6 +44,17 @@
                 android:src="@drawable/apple"
                 android:layout_margin="5dp"/>
 
+            <ImageButton
+                android:id="@+id/news_spice"
+                android:layout_weight="0"
+                android:layout_width="200dp"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/spice"
+                android:layout_margin="5dp"
+                android:onClick="newsBtnOnClick" />
 
             <ImageButton
                 android:id="@+id/news_egg"
@@ -54,10 +65,11 @@
                 android:scaleType="fitXY"
                 android:layout_weight="1"
                 android:src="@drawable/egg"
-                android:layout_margin="5dp"/>
+                android:layout_margin="5dp"
+                android:onClick="newsBtnOnClick"/>
 
             <ImageButton
-                android:id="@+id/news_oil"
+                android:id="@+id/news_coconut"
                 android:layout_width="200dp"
                 android:layout_height="180dp"
                 android:adjustViewBounds="true"
@@ -78,20 +90,15 @@
                 android:src="@drawable/skittles"
                 android:layout_margin="5dp" />
 
-            <ImageButton
-                android:id="@+id/news_sugar"
-                android:layout_weight="0"
-                android:layout_width="200dp"
-                android:layout_height="180dp"
-                android:adjustViewBounds="true"
-                android:background="@null"
-                android:scaleType="fitXY"
-                android:src="@drawable/holidaysugar"
-                android:layout_margin="5dp" />
 
 
         </LinearLayout>
     </HorizontalScrollView>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="491dp" />
 
 
 </LinearLayout>
