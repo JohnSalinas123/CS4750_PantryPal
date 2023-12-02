@@ -4,4 +4,6 @@
     <string name="title_grocery_list">Grocery List</string>
     <string name="title_recipes">Recipes</string>
     <string name="title_meal_plan">Meal Plans</string>
+    <string name="recipe_name_placeholder">Recipe Name</string>
+    <string name="recipe_description_placeholder">Recipe Description</string>
 </resources>
