@@ -20,6 +20,8 @@ class RecipesFragment : Fragment() {
     private lateinit var recipesViewModel: RecipesViewModel
     private lateinit var recipesAdapter: RecipesAdapter
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,6 +39,9 @@ class RecipesFragment : Fragment() {
         recipesAdapter = RecipesAdapter { recipe -> onRecipeClick(recipe)}
         binding.recipeRecyclerView.adapter = recipesAdapter
         binding.recipeRecyclerView.layoutManager = LinearLayoutManager(context)
+
+        // Disable item animator
+        //binding.recipeRecyclerView.itemAnimator = null
 
         // Live Data
         recipesViewModel.recipes.observe(viewLifecycleOwner) { recipes ->
