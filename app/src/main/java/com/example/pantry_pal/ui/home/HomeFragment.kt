@@ -1,20 +1,13 @@
 package com.example.pantry_pal.ui.home
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.content.pm.ResolveInfo
-import android.media.audiofx.BassBoost
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.pantry_pal.R
@@ -28,6 +21,12 @@ class HomeFragment: Fragment() , View.OnClickListener{
     private lateinit var eggNews: ImageButton
     private lateinit var coconutNews: ImageButton
     private lateinit var skittlesNews: ImageButton
+
+    private lateinit var meal1: ImageButton
+    private lateinit var meal2: ImageButton
+    private lateinit var meal3: ImageButton
+    private lateinit var meal4: ImageButton
+    private lateinit var meal5: ImageButton
 
     private val binding get() = _binding!!
 
@@ -55,12 +54,22 @@ class HomeFragment: Fragment() , View.OnClickListener{
         eggNews = root.findViewById(R.id.news_egg)
         coconutNews = root.findViewById(R.id.news_coconut)
         skittlesNews = root.findViewById(R.id.news_skittles)
+        meal1 = root.findViewById(R.id.meal1)
+        meal2 = root.findViewById(R.id.meal2)
+        meal3 = root.findViewById(R.id.meal3)
+        meal4 = root.findViewById(R.id.meal4)
+        meal5 = root.findViewById(R.id.meal5)
 
         appleNews.setOnClickListener(this)
         spiceNews.setOnClickListener(this)
         eggNews.setOnClickListener(this)
         coconutNews.setOnClickListener(this)
         skittlesNews.setOnClickListener(this)
+        meal1.setOnClickListener(this)
+        meal2.setOnClickListener(this)
+        meal3.setOnClickListener(this)
+        meal4.setOnClickListener(this)
+        meal5.setOnClickListener(this)
 
         return root
     }
@@ -99,6 +108,36 @@ class HomeFragment: Fragment() , View.OnClickListener{
             R.id.news_skittles -> {
                 url =
                     "https://www.npr.org/2022/07/22/1112929301/skittles-lawsuit-titanium-dioxide"
+                openLink(url)
+            }
+
+            R.id.meal1 -> {
+                url =
+                    "https://www.tasteofhome.com/recipes/bean-burritos"
+                openLink(url)
+            }
+
+            R.id.meal2 -> {
+                url =
+                    "https://www.tasteofhome.com/recipes/hawaiian-pork-chops/"
+                openLink(url)
+            }
+
+            R.id.meal3 -> {
+                url =
+                    "https://www.tasteofhome.com/recipes/easy-pad-thai/"
+                openLink(url)
+            }
+
+            R.id.meal4 -> {
+                url =
+                    "https://www.tasteofhome.com/recipes/nacho-pie/"
+                openLink(url)
+            }
+
+            R.id.meal5 -> {
+                url =
+                    "https://www.tasteofhome.com/recipes/cajun-shrimp/"
                 openLink(url)
             }
 
