@@ -19,6 +19,7 @@
             android:id="@+id/imperial_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:layout_marginRight="50dp"
             android:text="Imperial" />
 
@@ -31,7 +32,7 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/height_feet"
+        android:id="@+id/height_1"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -41,14 +42,14 @@
         app:layout_constraintTop_toBottomOf="@+id/unit_option" />
 
     <EditText
-        android:id="@+id/height_inch"
+        android:id="@+id/height_2"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/height_feet"
+        app:layout_constraintStart_toEndOf="@+id/height_1"
         app:layout_constraintTop_toBottomOf="@+id/unit_option" />
 
     <Button
@@ -59,7 +60,7 @@
         android:layout_marginTop="90dp"
         android:text="@string/cal_button"
         app:layout_constraintStart_toEndOf="@+id/weight"
-        app:layout_constraintTop_toBottomOf="@+id/height_inch" />
+        app:layout_constraintTop_toBottomOf="@+id/height_1" />
 
     <EditText
         android:id="@+id/weight"
@@ -68,8 +69,8 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="@+id/height_feet"
-        app:layout_constraintTop_toBottomOf="@+id/height_feet" />
+        app:layout_constraintStart_toStartOf="@+id/height_1"
+        app:layout_constraintTop_toBottomOf="@+id/height_2" />
 
     <TextView
         android:id="@+id/textView"
