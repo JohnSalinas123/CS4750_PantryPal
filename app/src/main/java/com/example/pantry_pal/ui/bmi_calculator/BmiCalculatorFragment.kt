@@ -1,4 +1,4 @@
-package com.example.pantry_pal.ui.meal_plan
+package com.example.pantry_pal.ui.bmi_calculator
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.pantry_pal.databinding.FragmentMealPlanBinding
+import com.example.pantry_pal.databinding.FragmentBmiCalculatorBinding
 
-class MealPlanFragment : Fragment() {
+class BmiCalculatorFragment : Fragment() {
 
-    private var _binding: FragmentMealPlanBinding? = null
+    private var _binding: FragmentBmiCalculatorBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,15 +23,15 @@ class MealPlanFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val mealPlanViewModel =
-            ViewModelProvider(this).get(MealPlanViewModel::class.java)
+            ViewModelProvider(this).get(BmiCalculatorViewModel::class.java)
 
-        _binding = FragmentMealPlanBinding.inflate(inflater, container, false)
+        _binding = FragmentBmiCalculatorBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.mealPlan
-        mealPlanViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+//        val textView: TextView = binding.mealPlan
+//        mealPlanViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
         return root
     }
 
@@ -40,4 +40,7 @@ class MealPlanFragment : Fragment() {
         _binding = null
     }
 
+    fun calculateBmi() {
+
+    }
 }

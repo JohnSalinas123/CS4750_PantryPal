@@ -3,6 +3,10 @@
     <string name="title_home">Home</string>
     <string name="title_grocery_list">Grocery List</string>
     <string name="title_recipes">Recipes</string>
-    <string name="title_meal_plan">Meal Plans</string>
+    <string name="bmi_calculator">BMI Calculator</string>
     <string name="add_recipe_button_text">Add Recipe</string>
+    
+    <string name="unit">Unit</string>
+    <string name="cal_button">Calculate</string>
+    <string name="bmi_result">BMI</string>
 </resources>

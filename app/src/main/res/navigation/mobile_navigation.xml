@@ -24,9 +24,9 @@
         tools:layout="@layout/fragment_recipes" />
 
     <fragment
-        android:id="@+id/navigation_meal_plan"
-        android:name="com.example.pantry_pal.ui.meal_plan.MealPlanFragment"
-        android:label="@string/title_meal_plan"
-        tools:layout="@layout/fragment_meal_plan" />
+        android:id="@+id/navigation_bmi_calculator"
+        android:name="com.example.pantry_pal.ui.bmi_calculator.BmiCalculatorFragment"
+        android:label="@string/bmi_calculator"
+        tools:layout="@layout/fragment_bmi_calculator" />
 
 </navigation>
