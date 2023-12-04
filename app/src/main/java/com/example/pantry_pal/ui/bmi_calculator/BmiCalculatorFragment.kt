@@ -35,6 +35,16 @@ class BmiCalculatorFragment : Fragment() {
             val result = calculateBmi()
 
         }
+        binding.imperialUnit.setOnClickListener {
+            binding.height1Layout.hint = "ft"
+            binding.height2Layout.hint = "in"
+            binding.weightLayout.hint = "lbs"
+        }
+        binding.metricUnit.setOnClickListener {
+            binding.height1Layout.hint = "m"
+            binding.height2Layout.hint = "cm"
+            binding.weightLayout.hint = "kg"
+        }
         return root
     }
 

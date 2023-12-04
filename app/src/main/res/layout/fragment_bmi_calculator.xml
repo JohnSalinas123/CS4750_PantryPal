@@ -12,15 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintStart_toStartOf="@+id/unit"
+        app:layout_constraintTop_toBottomOf="@+id/unit">
 
         <RadioButton
             android:id="@+id/imperial_unit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_marginRight="50dp"
+            android:layout_marginEnd="50dp"
             android:text="Imperial" />
 
         <RadioButton
@@ -31,66 +30,90 @@
 
     </RadioGroup>
 
-    <EditText
-        android:id="@+id/height_1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/height_1_layout"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="number"
+        android:layout_marginTop="30dp"
+        android:hint="ft/m"
         app:layout_constraintStart_toStartOf="@+id/unit_option"
-        app:layout_constraintTop_toBottomOf="@+id/unit_option" />
+        app:layout_constraintTop_toBottomOf="@+id/unit_option" >
 
-    <EditText
-        android:id="@+id/height_2"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/height_2_layout"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/height_1"
-        app:layout_constraintTop_toBottomOf="@+id/unit_option" />
+        android:layout_marginTop="30dp"
+        android:hint="in/cm"
+        app:layout_constraintStart_toEndOf="@+id/height_1_layout"
+        app:layout_constraintTop_toBottomOf="@+id/unit_option">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/calculate"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="90dp"
-        android:text="@string/cal_button"
-        app:layout_constraintStart_toEndOf="@+id/weight"
-        app:layout_constraintTop_toBottomOf="@+id/height_1" />
 
-    <EditText
-        android:id="@+id/weight"
+        android:layout_marginTop="30dp"
+        android:text="@string/cal_button"
+        app:layout_constraintStart_toStartOf="@+id/weight_layout"
+        app:layout_constraintTop_toBottomOf="@+id/weight_layout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weight_layout"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="@+id/height_1"
-        app:layout_constraintTop_toBottomOf="@+id/height_2" />
+        android:hint="lbs/kg"
+        app:layout_constraintStart_toStartOf="@+id/height_1_layout"
+        app:layout_constraintTop_toBottomOf="@+id/height_1_layout">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/unit"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
 
-    <TextView
-        android:id="@+id/display_bmi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/bmi_result"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toStartOf="@+id/weight"
-        app:layout_constraintTop_toBottomOf="@+id/weight" />
+    </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/unit"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/display_bmi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/bmi_result"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintStart_toStartOf="@+id/weight_layout"
+            app:layout_constraintTop_toBottomOf="@+id/weight_layout" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
