@@ -5,51 +5,105 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    card_view:cardBackgroundColor="#8046b115"
-    card_view:cardCornerRadius="20dp">
+    card_view:cardBackgroundColor="#47a151"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardUseCompatPadding="false">
 
-    <!-- Main Content View -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/recipe_name"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="@string/recipe_name_placeholder"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.053"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/recipe_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+        <ImageView
+            android:id="@+id/recipe_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:text="@string/recipe_description_placeholder"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="@string/burger_meal_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/burger_meal"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/recipe_name" />
+            card_view:layout_constraintTop_toBottomOf="@+id/recipe_name"
+            card_view:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/recipe_calories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/recipe_calories_placeholder"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toEndOf="@+id/recipe_image"
+            card_view:layout_constraintTop_toBottomOf="@+id/recipe_name" />
+
+        <TextView
+            android:id="@+id/recipe_description"
+            android:layout_width="245dp"
+            android:layout_height="97dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="@string/recipe_calories_placeholder"
+            android:text="@string/recipe_description_placeholder"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/recipe_description" />
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toEndOf="@+id/recipe_image"
+            card_view:layout_constraintTop_toBottomOf="@+id/recipe_diet"
+            card_view:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/separator_line"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#ffffff"
+            card_view:layout_constraintBottom_toTopOf="@id/recipe_description"
+            card_view:layout_constraintStart_toEndOf="@+id/recipe_calories"
+            card_view:layout_constraintTop_toBottomOf="@+id/recipe_name" />
+
+        <TextView
+            android:id="@+id/recipe_diet"
+            android:layout_width="100dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/recipe_diet_placeholder"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.0"
+            card_view:layout_constraintStart_toEndOf="@+id/recipe_calories"
+            card_view:layout_constraintTop_toBottomOf="@+id/recipe_name" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
 

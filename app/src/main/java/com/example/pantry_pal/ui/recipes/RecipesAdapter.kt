@@ -1,10 +1,12 @@
 package com.example.pantry_pal.ui.recipes
 
+import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pantry_pal.R
 import com.example.pantry_pal.data.Recipe
 import com.example.pantry_pal.databinding.ListItemRecipeBinding
 
@@ -16,7 +18,8 @@ class RecipeViewHolder(
 
     fun bind(recipe: Recipe) {
         binding.recipeName.text = recipe.name
-        binding.recipeCalories.text = recipe.calories.toString()
+        binding.recipeCalories.text = binding.root.context.getString(R.string.calories_format, recipe.calories)
+        binding.recipeDiet.text = recipe.diet
         binding.recipeDescription.text = recipe.description
 
         itemView.setOnClickListener { onItemClick(recipe)}
