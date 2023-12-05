@@ -16,6 +16,7 @@ class RecipeViewHolder(
 
     fun bind(recipe: Recipe) {
         binding.recipeName.text = recipe.name
+        binding.recipeCalories.text = recipe.calories.toString()
         binding.recipeDescription.text = recipe.description
 
         itemView.setOnClickListener { onItemClick(recipe)}

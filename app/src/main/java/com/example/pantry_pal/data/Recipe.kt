@@ -4,6 +4,7 @@ data class Recipe (
 
     val id: Int,
     val name: String,
+    val calories: Int,
     val description: String,
     val vegetarian : Boolean,
     val ingredients: List<IngredientForRecipe>,

@@ -49,8 +49,21 @@ class RecipesViewModel : ViewModel() {
 
     private fun createMockRecipes(): List<Recipe> {
         return listOf(
-            Recipe(1, "Burger", "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
-            Recipe(2, "Pasta", "Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+            Recipe(1, "Burger",500, "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
+            Recipe(2, "Pasta",800, "Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+            Recipe(3, "Burger",500, "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
+            Recipe(4, "Pasta",800, "Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+            Recipe(5, "Burger",500, "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
+            Recipe(6, "Pasta",800, "Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+            Recipe(7, "Burger",500, "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
+            Recipe(8, "Pasta",800, "Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+            Recipe(9, "Burger",500, "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
+            Recipe(10, "Pasta",800, "Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+            Recipe(11, "Burger",500, "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
+            Recipe(12, "Pasta", 800,"Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+            Recipe(13, "Burger",500, "This is a burger recipe", false, createMockIngredients(), createMockSteps()),
+            Recipe(14, "Pasta", 800,"Delicious pasta recipe", true, createMockIngredients(), createMockSteps()),
+
             // Add more mock recipes as needed
         )
     }

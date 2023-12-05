@@ -6,4 +6,5 @@
     <string name="title_meal_plan">Meal Plans</string>
     <string name="recipe_name_placeholder">Recipe Name</string>
     <string name="recipe_description_placeholder">Recipe Description</string>
+    <string name="recipe_calories_placeholder">Recipe Calories</string>
 </resources>
