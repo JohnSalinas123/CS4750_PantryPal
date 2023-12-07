@@ -9,4 +9,5 @@
     <string name="unit">Unit</string>
     <string name="cal_button">Calculate</string>
     <string name="bmi_result">BMI</string>
+    <string name="bmi_category">Category</string>
 </resources>

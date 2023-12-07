@@ -62,6 +62,7 @@ class BmiCalculatorFragment : Fragment() {
 
         if (h1 == null || h2 == null || w == null || h1 == 0.0 || h2 == 0.0) {
             displayBmi(0.0)
+            displayCategory(0.0)
             return
         } else {
             val bmiResult: Double = if (unitSelected() == 1) {
@@ -70,6 +71,7 @@ class BmiCalculatorFragment : Fragment() {
                 convert * w/((h1*12+h2).pow(2))
             }
             displayBmi(bmiResult)
+            displayCategory(bmiResult)
         }
     }
 
@@ -81,5 +83,19 @@ class BmiCalculatorFragment : Fragment() {
     }
     private fun displayBmi(bmi: Double) {
         binding.displayBmi.text = String.format("BMI: %.2f", bmi)
+    }
+    private fun displayCategory(bmi: Double) {
+        val bmiCategory = if (bmi == 0.00) { "_"
+        } else if (bmi < 18.50) {
+            "Underweight"
+        } else if (bmi < 25.00) {
+            "Healthy Weight"
+        } else if (bmi < 30.00) {
+            "Overweight"
+        } else {
+            "Obesity"
+        }
+
+        binding.bmiCategory.text = String.format("Category: %s", bmiCategory)
     }
 }
