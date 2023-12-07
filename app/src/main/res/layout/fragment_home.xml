@@ -15,6 +15,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="14dp"
         android:fontFamily="@font/distro"
         android:text="@string/news_text"
@@ -99,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/distro"
         android:text="@string/recommended_text"
@@ -109,21 +110,22 @@
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="302dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="350dp"
+            android:layout_marginTop="10dp">
 
             <ImageButton
                 android:id="@+id/meal1"
                 android:layout_width="120dp"
                 android:layout_height="180dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/meal1"
                 android:adjustViewBounds="true"
-                android:scaleType="fitXY"
                 android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/meal1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -146,10 +148,10 @@
                 android:layout_width="120dp"
                 android:layout_height="180dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/meal2"
                 android:adjustViewBounds="true"
-                android:scaleType="fitXY"
                 android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/meal2"
                 app:layout_constraintStart_toEndOf="@+id/meal1"
                 app:layout_constraintTop_toTopOf="@+id/meal1" />
 
@@ -171,10 +173,10 @@
                 android:layout_width="120dp"
                 android:layout_height="180dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/meal3"
                 android:adjustViewBounds="true"
-                android:scaleType="fitXY"
                 android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/meal3"
                 app:layout_constraintStart_toEndOf="@+id/meal2"
                 app:layout_constraintTop_toTopOf="@+id/meal2" />
 
@@ -196,10 +198,10 @@
                 android:layout_width="120dp"
                 android:layout_height="180dp"
                 android:layout_marginStart="10dp"
-                android:src="@drawable/meal4"
                 android:adjustViewBounds="true"
-                android:scaleType="fitXY"
                 android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/meal4"
                 app:layout_constraintStart_toEndOf="@+id/meal3"
                 app:layout_constraintTop_toTopOf="@+id/meal3" />
 
