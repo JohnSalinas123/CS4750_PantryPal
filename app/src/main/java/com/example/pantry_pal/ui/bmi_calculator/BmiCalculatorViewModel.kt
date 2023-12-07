@@ -1,10 +1,10 @@
-package com.example.pantry_pal.ui.meal_plan
+package com.example.pantry_pal.ui.bmi_calculator
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MealPlanViewModel : ViewModel() {
+class BmiCalculatorViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is meal plan Fragment"

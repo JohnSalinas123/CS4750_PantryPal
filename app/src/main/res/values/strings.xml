@@ -3,7 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_grocery_list">Grocery List</string>
     <string name="title_recipes">Recipes</string>
-    <string name="title_meal_plan">Meal Plans</string>
+    <string name="bmi_calculator">BMI Calculator</string>
     <string name="add_recipe_button_text">Add Recipe</string>
     <string name="news_text">What\'s New</string>
     <string name="recommended_text">Recommended</string>
@@ -13,4 +13,8 @@
     <string name="recipe_diet_placeholder">Recipe Diet</string>
     <string name="calories_format">%d cals</string>
     <string name="burger_meal_description">Pixel art image of a burger with fries and soda</string>
+    <string name="unit">Unit</string>
+    <string name="cal_button">Calculate</string>
+    <string name="bmi_result">BMI</string>
+    <string name="bmi_category">Category</string>
 </resources>
