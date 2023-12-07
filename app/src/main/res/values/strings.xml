@@ -5,4 +5,8 @@
     <string name="title_recipes">Recipes</string>
     <string name="title_meal_plan">Meal Plans</string>
     <string name="add_recipe_button_text">Add Recipe</string>
+
+    <string name="news_text">What\'s New</string>
+    <string name="recommended_text">Recommended</string>
+
 </resources>
