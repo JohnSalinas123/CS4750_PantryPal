@@ -5,8 +5,12 @@
     <string name="title_recipes">Recipes</string>
     <string name="title_meal_plan">Meal Plans</string>
     <string name="add_recipe_button_text">Add Recipe</string>
-
     <string name="news_text">What\'s New</string>
     <string name="recommended_text">Recommended</string>
-
+    <string name="recipe_name_placeholder">Recipe Name</string>
+    <string name="recipe_description_placeholder">Recipe Description</string>
+    <string name="recipe_calories_placeholder">Recipe Calories</string>
+    <string name="recipe_diet_placeholder">Recipe Diet</string>
+    <string name="calories_format">%d cals</string>
+    <string name="burger_meal_description">Pixel art image of a burger with fries and soda</string>
 </resources>
