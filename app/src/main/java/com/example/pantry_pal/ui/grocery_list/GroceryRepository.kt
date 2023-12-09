@@ -1,28 +1,14 @@
 package com.example.pantry_pal.ui.grocery_list
 
 import android.content.Context
-import androidx.annotation.WorkerThread
 import androidx.room.Room
-import com.example.pantry_pal.data.GroceryDao
 import com.example.pantry_pal.data.GroceryDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import java.util.UUID
+
 private const val DATABASE_NAME = "grocery-database"
-//class GroceryRepository(private val groceryDao: GroceryDao) {
-//    val allGroceryItems: Flow<List<Grocery>> = groceryDao.getGrocery()
-//
-//    @WorkerThread
-//    suspend fun insertGroceryItem(grocery: Grocery) {
-//        groceryDao.addItem(grocery)
-//    }
-//
-//    @WorkerThread
-//    suspend fun deleteGroceryItem(grocery: Grocery) {
-//        groceryDao.deleteItem(grocery)
-//    }
 
 
 
@@ -41,7 +27,7 @@ class GroceryRepository private constructor(
 
     fun getGrocery(): Flow<List<Grocery>> = database.groceryDao().getGrocery()
 
-     fun getItem(id: Int): Grocery = database.groceryDao().getItem(id)
+     fun getItem(item: String): Grocery = database.groceryDao().getItem(item)
      fun addGrocery(item: String) {
          coroutineScope.launch {
              val newItem = Grocery(item = item)
@@ -51,7 +37,7 @@ class GroceryRepository private constructor(
 
      fun deleteGrocery(item: String) {
          coroutineScope.launch {
-             val newItem = Grocery(item = item)
+             val newItem = database.groceryDao().getItem(item)
              database.groceryDao().deleteItem(newItem)
          }
     }
