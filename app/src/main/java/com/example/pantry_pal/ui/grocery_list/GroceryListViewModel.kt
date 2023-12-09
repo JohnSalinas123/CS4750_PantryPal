@@ -1,26 +1,35 @@
 package com.example.pantry_pal.ui.grocery_list
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+
+
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
 
-class GroceryListViewModel : ViewModel() {
+class GroceryListViewModel: ViewModel() {
+    private val groceryRepository = GroceryRepository.get()
+    private val _grocery: MutableStateFlow<List<Grocery>> = MutableStateFlow(emptyList())
 
-    private val _groceryItems = MutableLiveData<MutableList<String>>(mutableListOf())
-    val groceryItems: LiveData<MutableList<String>> = _groceryItems
+    val grocery: StateFlow<List<Grocery>>
+        get() = _grocery.asStateFlow()
 
-    // Function to add an item
-    fun addItem(item: String) {
-        val updatedList = groceryItems.value ?: mutableListOf()
-        updatedList.add(item)
-        _groceryItems.value = updatedList
+    init {
+        viewModelScope.launch {
+            groceryRepository.getGrocery().collect {
+                _grocery.value = it
+            }
+        }
     }
 
-    // Function to remove an item
-    fun removeItem(item: String) {
-        val updatedList = groceryItems.value ?: mutableListOf()
-        updatedList.remove(item)
-        _groceryItems.value = updatedList
+     fun addItem(item: String) {
+        groceryRepository.addGrocery(item)
     }
+     fun deleteItem(item:String) {
+        groceryRepository.deleteGrocery(item)
+    }
+
 }

@@ -4,64 +4,69 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.pantry_pal.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantry_pal.databinding.FragmentGroceryListBinding
+
+import kotlinx.coroutines.launch
+
 
 class GroceryListFragment : Fragment() {
 
     private var _binding: FragmentGroceryListBinding? = null
-    private val binding get() = _binding!!
-    private lateinit var viewModel: GroceryListViewModel
-    private lateinit var adapter: ArrayAdapter<String>
+    private val binding
+        get() = checkNotNull(_binding) {
+            "Cannot access binding because it is null. Is the view visible?"
+        }
+
+    private val groceryListViewModel: GroceryListViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+
+
+    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        viewModel = ViewModelProvider(this).get(GroceryListViewModel::class.java)
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentGroceryListBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        binding.groceryRecyclerView.layoutManager = LinearLayoutManager(context)
+    return binding.root
+    }
 
-        adapter = object : ArrayAdapter<String>(requireContext(), R.layout.list_item_grocery, R.id.textViewItem, mutableListOf()) {
-            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-                val view = super.getView(position, convertView, parent)
-                val item = getItem(position)
-                val textViewItem = view.findViewById<TextView>(R.id.textViewItem)
-                val buttonDeleteItem = view.findViewById<Button>(R.id.buttonDeleteItem)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-                textViewItem.text = item
-                buttonDeleteItem.setOnClickListener {
-                    item?.let { it1 -> viewModel.removeItem(it1) }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                groceryListViewModel.grocery.collect { grocery ->
+                    binding.groceryRecyclerView.adapter = GroceryListAdapter(grocery, groceryListViewModel)
                 }
-
-                return view
             }
         }
+        binding.apply {
+            buttonAddItem.setOnClickListener {
+                val newItem = editTextItem.text.toString()
+                if (newItem.isNotEmpty()) {
+                    groceryListViewModel.addItem(newItem)
 
-        binding.listViewGrocery.adapter = adapter
-
-        viewModel.groceryItems.observe(viewLifecycleOwner) { items ->
-            adapter.clear()
-            adapter.addAll(items)
-            adapter.notifyDataSetChanged()
-        }
-
-        binding.buttonAddItem.setOnClickListener {
-            val newItem = binding.editTextItem.text.toString()
-            if (newItem.isNotEmpty()) {
-                viewModel.addItem(newItem)
-                binding.editTextItem.text.clear()
+                    editTextItem.text.clear()
+                }
             }
         }
-
-        return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
