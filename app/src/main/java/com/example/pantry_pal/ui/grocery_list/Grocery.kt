@@ -1,3 +1,11 @@
 package com.example.pantry_pal.ui.grocery_list
 
-data class Grocery()
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.util.UUID
+
+@Entity(tableName = "grocery")
+data class Grocery(
+    @PrimaryKey(autoGenerate = true) val id: Int =0,
+    val item: String
+)
